@@ -1,3 +1,3 @@
-# ![appy_title](https://github.com/trouchet/appy/blob/b34c03160d0ccee2e9071debfe18b7571aa50e4f/images/appy.png)
+# ![appy_title](https://github.com/trouchet/appy/blob/0296eda8f602bb634a14c4bf81507a051924832c/images/appy_small.png)
 
 Appy, a minimal Flask app with logging.
