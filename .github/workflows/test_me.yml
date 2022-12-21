@@ -17,12 +17,12 @@ jobs:
       #       check-out repo and set-up python
       #----------------------------------------------
       - name: Check out repository
-              uses: actions/checkout@v3
-            - name: Set up python
-              id: setup-python
-              uses: actions/setup-python@v4
-              with:
-                python-version: ${{ matrix.python-version }}
+        uses: actions/checkout@v3
+      - name: Set up python
+        id: setup-python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
 
       #----------------------------------------------
       #  -----  install & configure poetry  -----
@@ -52,7 +52,18 @@ jobs:
       #----------------------------------------------
       - name: Install project
         run: poetry install --no-interaction
-      
+  
+  test:
+    runs-on: ${{ matrix.os }}
+    
+    strategy:
+      max-parallel: 42
+      fail-fast: false
+      matrix:
+        os: [ubuntu-20.04, macos-latest, windows-latest]
+        python-version: [3.6, 3.7, 3.9, 3.10]
+    
+    steps:
       - name: Run tests
           run: |
             source .venv/bin/activate
