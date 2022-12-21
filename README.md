@@ -1,3 +1,3 @@
-# ![appy_title](https://github.com/trouchet/appy/blob/0296eda8f602bb634a14c4bf81507a051924832c/images/appy_small.png)
+# ![appy_title](https://github.com/trouchet/appy/blob/8c9923dc13b109b83d07a43d6810ebf7b150a2fb/images/appy_small.png)
 
 An appy on Flask.
