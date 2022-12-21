@@ -1,3 +1,34 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name='appy'
+description="An appy on Flask"
+author='Bruno Peixoto'
+author_email='brunolnetto@gmail.com'
+python_requires='>=2.7'
+classifiers=[
+    'Framework :: Flask',
+    'Development Status :: 2 - Pre-Alpha',
+    'Intended Audience :: Developers',
+    'License :: OSI Approved :: MIT License',
+    'Natural Language :: English',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.6',
+    'Programming Language :: Python :: 3.7',
+    'Programming Language :: Python :: 3.8',
+]
+license='MIT license'
+readme = "README.md"
+keywords=['Flask']
+
+[tool.setuptools.packages.find]
+where = ["src"]            # list of folders that contain the packages (["."] by default)
+include = ["appy*"]        # package names should match these glob patterns (["*"] by default)
+exclude = ["appy.tests*"]  # exclude packages matching these glob patterns (empty by default)
+namespaces = false         # to disable scanning PEP 420 namespaces (true by defau
+
 [tool.tox]
 legacy_tox_ini = """
     [tox]
@@ -8,7 +39,7 @@ legacy_tox_ini = """
 """
 
 [tool.ruff]
-line-length = 88
+line-length = 100
 
 # Enable Pyflakes `E` and `F` codes by default.
 select = ["E", "F"]
