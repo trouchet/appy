@@ -23,12 +23,6 @@ license='MIT license'
 readme = "README.md"
 keywords=['Flask']
 
-[tool.setuptools.packages.find]
-where = ["src"]            # list of folders that contain the packages (["."] by default)
-include = ["appy*"]        # package names should match these glob patterns (["*"] by default)
-exclude = ["appy.tests*"]  # exclude packages matching these glob patterns (empty by default)
-namespaces = false         # to disable scanning PEP 420 namespaces (true by defau
-
 [tool.tox]
 legacy_tox_ini = """
     [tox]
