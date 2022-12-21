@@ -1,5 +1,5 @@
-from . import app_y
+from . import app
 
-@app_y.errorhandler(404)
+@app.errorhandler(404)
 def page_not_found(error):
     return 'Error 404'

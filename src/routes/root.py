@@ -22,7 +22,7 @@ def do_login():
 @app.route('/hello/')
 @app.route('/hello/<name>')
 def say_hello(name=None):
-    if(name==None):
+    if(name is None):
         return 'Hello, World!'
     else:
         return f"Hello, {escape(name)}!"    
