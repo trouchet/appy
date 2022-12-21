@@ -5,11 +5,12 @@ description = "An appy on Flask"
 authors = ["Bruno Peixoto <brunolnetto@gmail.com>"]
 license = "MIT license"
 readme = "README.md"
-packages = [{include = "poetry_demo"}]
+packages = [{include = "src"}]
 
 [tool.poetry.dependencies]
 python = ">=3.8.1,<4.0"
 flask = "^2.2.2"
+werkzeug = "^2.2.2"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.0.189"
