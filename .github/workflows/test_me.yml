@@ -55,17 +55,18 @@ jobs:
   
   test:
     runs-on: ${{ matrix.os }}
-    
+    needs: poetry
+
     strategy:
       max-parallel: 42
       fail-fast: false
       matrix:
         os: [ubuntu-20.04, macos-latest, windows-latest]
         python-version: [3.6, 3.7, 3.9, 3.10]
-    
+
     steps:
       - name: Run tests
-          run: |
-            source .venv/bin/activate
-            pytest tests/
-            coverage report
+        run: |
+          source .venv/bin/activate
+          pytest tests/
+          coverage report
