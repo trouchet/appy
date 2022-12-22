@@ -45,7 +45,9 @@ jobs:
       #----------------------------------------------
       - name: Install dependencies
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-        run: poetry install --verbose --no-interaction --no-root
+        run: | 
+          poetry install --verbose --no-interaction --no-root 
+          cat /home/runner/work/appy/appy/poetry-installer-error-hqcp9_dj.log
 
       #----------------------------------------------
       # install your root project, if required
