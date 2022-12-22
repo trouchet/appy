@@ -34,8 +34,13 @@ jobs:
       #         Logs existing errors         
       #----------------------------------------------  
       - name: Logs existing error poetry errors if existent        
-        if: $(ls $HOME/work/appy/appy/ | grep ".log" | xargs cat | wc -l) -ne 0
-        run: ls $HOME/work/appy/appy/ | grep ".log" | xargs cat
+        run: |
+          if [[ $(ls $HOME/work/appy/appy/ | grep ".log" | xargs cat | wc -l) -ne 0 ]]
+          then
+            ls $HOME/work/appy/appy/ | grep ".log" | xargs cat
+          else
+            echo "There is no poetry log to report."
+          fi
 
       #----------------------------------------------
       #       load cached venv if cache exists
