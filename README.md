@@ -12,7 +12,7 @@ An appy on Flask.
 
 ## Lint
 
-   `ruff --fix .`
+   `ruff --fix .`&& black .
 
 ## Test
 
