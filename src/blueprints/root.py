@@ -1,17 +1,22 @@
-import sys
- 
-# setting path
-sys.path.append('../')
+from flask import request, Blueprint
 
-from appy import app
+from markupsafe import escape
 
 
-@app.route('/about')
+root_bp = Blueprint('', __name__)
+
+
+@root_bp.route('/')
+def show_projects():
+    return 'The project page'
+
+
+@root_bp.route('/about')
 def about():
     return 'The about page'
 
 
-@app.route('/login', methods=['GET', 'POST'])
+@root_bp.route('/login', methods=['GET', 'POST'])
 def do_login():
     if request.method == 'POST':
         return 'do login'
@@ -19,8 +24,8 @@ def do_login():
         return 'show login form'
 
 
-@app.route('/hello/')
-@app.route('/hello/<name>')
+@root_bp.route('/hello/')
+@root_bp.route('/hello/<name>')
 def say_hello(name=None):
     if(name is None):
         return 'Hello, World!'
@@ -28,7 +33,7 @@ def say_hello(name=None):
         return f"Hello, {escape(name)}!"    
 
 
-@app.route('/path/<path:subpath>')
+@root_bp.route('/path/<path:subpath>')
 def show_subpath(subpath):
     # show the subpath after /path/
     return f'Subpath {escape(subpath)}'

@@ -1,11 +1,9 @@
-import sys
- 
-# setting path
-sys.path.append('../')
+from flask import Blueprint
 
-from appy import app
+posts_bp = Blueprint('posts', __name__)
 
-@app.route('/posts/<int:post_id>')
+
+@posts_bp.route('/<int:post_id>')
 def show_post(post_id):
     # show the post with the given id, the id is an integer
     return f'Post {post_id}'
