@@ -4,12 +4,15 @@ on: [push, pull_request]
 jobs:
   poetry:
     runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
     
     strategy:
       max-parallel: 42
       fail-fast: false
       matrix:
-        os: [ubuntu-20.04, macos-latest, windows-latest]
+        os: [ubuntu-latest, macos-latest, windows-latest]
         python-version: [3.6, 3.7, 3.9, 3.10]
 
     steps:
@@ -25,22 +28,15 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       #----------------------------------------------
-      #  -----  install & configure poetry  -----
+      #       install & configure poetry  -----
       #----------------------------------------------
       - name: Install and configure Poetry
         uses: snok/install-poetry@v1
-
-      #----------------------------------------------
-      #         Logs existing errors         
-      #----------------------------------------------  
-      - name: Logs existing error poetry errors if existent        
-        run: |
-          if [[ $(ls $HOME/work/appy/appy/ | grep ".log" | xargs cat | wc -l) -ne 0 ]]
-          then
-            ls $HOME/work/appy/appy/ | grep ".log" | xargs cat
-          else
-            echo "There is no poetry log to report."
-          fi
+        run: poetry config experimental.new-installer false
+        with:
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+          
 
       #----------------------------------------------
       #       load cached venv if cache exists
@@ -53,14 +49,14 @@ jobs:
           key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
       
       #----------------------------------------------
-      # install dependencies if cache does not exist
+      #       install dependencies if cache does not exist
       #----------------------------------------------
       - name: Install dependencies
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
         run: poetry install --verbose --no-interaction --no-root
       
       #----------------------------------------------
-      # install your root project, if required
+      #       install your root project, if required
       #----------------------------------------------
       - name: Install project
         run: poetry install --verbose --no-interaction
@@ -68,17 +64,23 @@ jobs:
   test:
     runs-on: ${{ matrix.os }}
     needs: poetry
+    defaults:
+      run:
+        shell: bash
 
     strategy:
       max-parallel: 42
       fail-fast: false
       matrix:
-        os: [ubuntu-20.04, macos-latest, windows-latest]
+        os: [ubuntu-latest, macos-latest, windows-latest]
         python-version: [3.6, 3.7, 3.9, 3.10]
 
     steps:
-      - name: Run tests
+      #----------------------------------------------
+      #       Test coverage
+      #----------------------------------------------
+      - name: Run tests and generate coverage
         run: |
-          source .venv/bin/activate
-          pytest tests/
-          coverage report
+          poetry run pytest tests/
+          poetry run coverage report
+      
