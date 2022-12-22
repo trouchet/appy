@@ -45,13 +45,13 @@ jobs:
       #----------------------------------------------
       - name: Install dependencies
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-        run: poetry install --vvv --no-interaction --no-root
+        run: poetry --vvv  install --no-interaction --no-root
 
       #----------------------------------------------
       # install your root project, if required
       #----------------------------------------------
       - name: Install project
-        run: poetry install --vvv --no-interaction
+        run: poetry --vvv install --no-interaction
   
   test:
     runs-on: ${{ matrix.os }}
