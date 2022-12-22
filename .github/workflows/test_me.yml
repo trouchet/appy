@@ -32,7 +32,6 @@ jobs:
       #----------------------------------------------
       - name: Install and configure Poetry
         uses: snok/install-poetry@v1
-        run: poetry config experimental.new-installer false
         with:
           virtualenvs-create: true
           virtualenvs-in-project: true
