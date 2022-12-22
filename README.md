@@ -10,6 +10,10 @@ An appy on Flask.
 
   `flask --app appy --debug run`
 
+## Lint
+
+   `ruff --fix . && black .`
+
 ## Test
 
   `pytest`
