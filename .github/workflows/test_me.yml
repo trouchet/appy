@@ -31,6 +31,13 @@ jobs:
         uses: snok/install-poetry@v1
 
       #----------------------------------------------
+      #         Logs existing errors         
+      #----------------------------------------------  
+      - name: Logs existing error poetry errors if existent        
+        if: $(ls $HOME/work/appy/appy/ | grep ".log" | xargs cat | wc -l) -ne 0
+        run: ls $HOME/work/appy/appy/ | grep ".log" | xargs cat
+
+      #----------------------------------------------
       #       load cached venv if cache exists
       #----------------------------------------------
       - name: Load cached venv
@@ -45,9 +52,7 @@ jobs:
       #----------------------------------------------
       - name: Install dependencies
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-        run: | 
-          poetry install --verbose --no-interaction --no-root 
-          ls $HOME/work/appy/appy/ | grep ".log" | xargs cat
+        run: poetry install --verbose --no-interaction --no-root
       
       #----------------------------------------------
       # install your root project, if required
