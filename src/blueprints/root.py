@@ -27,15 +27,13 @@ def do_login():
 @root_bp.route('/hello/')
 @root_bp.route('/hello/<name>')
 def say_hello(name=None):
-    if(name is None):
+    if (name is None):
         return 'Hello, World!'
     else:
-        return f"Hello, {escape(name)}!"    
+        return f"Hello, {escape(name)}!"
 
 
 @root_bp.route('/path/<path:subpath>')
 def show_subpath(subpath):
     # show the subpath after /path/
     return f'Subpath {escape(subpath)}'
-
-

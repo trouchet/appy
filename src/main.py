@@ -5,7 +5,7 @@ from blueprints.bundler import blueprints
 app = Flask(__name__)
 
 map(
-    lambda blueprint: app.register_blueprint(blueprint), 
+    lambda blueprint: app.register_blueprint(blueprint),
     blueprints
 )
 
