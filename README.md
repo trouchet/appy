@@ -12,7 +12,7 @@ Physicist Richard Feynman compared a computer to a room fulls of apes: https://w
 
 ## Lint
 
-   `ruff --fix . && black .`
+   `ruff --fix . && black . && pre-commit run --all-files`
 
 ## Test
 
