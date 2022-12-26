@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from flask import Blueprint, request
 from markupsafe import escape
 

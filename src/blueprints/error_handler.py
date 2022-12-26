@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from flask import Blueprint
 
 error_handler_bp = Blueprint("error_handlers", __name__)

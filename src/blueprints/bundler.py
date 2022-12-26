@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from error_handler import error_handler_bp
 from posts import posts_bp
 from projects import projects_bp
