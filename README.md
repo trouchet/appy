@@ -16,7 +16,7 @@ An appy on Flask.
 
 ## Test
 
-  `pytest`
+  `pytest --cov=src`
 
 ## Coverage
 
