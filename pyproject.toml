@@ -20,6 +20,7 @@ flake8 = "^6.0.0"
 pytest = "^7.2.0"
 pylint = "^2.15.9"
 tsgen = "^0.6.0"
+pytest-cov = "^4.0.0"
 
 [build-system]
 requires = ["poetry-core"]
