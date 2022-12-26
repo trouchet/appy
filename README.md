@@ -16,4 +16,8 @@ Physicist Richard Feynman compared a computer to a room fulls of apes: https://w
 
 ## Test
 
-  `pytest --cov=src`
+  `pytest`
+
+## Coverage
+
+  `coverage report -m`
