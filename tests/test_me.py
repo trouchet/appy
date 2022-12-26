@@ -1,8 +1,6 @@
 # test_me.py
 
-
-from __future__ import annotations
-
+# Take a look at: https://testdriven.io/blog/flask-pytest/
 
 def test_dummy():
     assert "ackbar" == "ackbar"
