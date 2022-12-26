@@ -8,7 +8,7 @@ readme = "README.md"
 packages = [{include = "src"}]
 
 [tool.poetry.dependencies]
-python = ">=3.8.1,<4.0"
+python = ">=3.6,<4.0"
 flask = "^2.2.2"
 werkzeug = "^2.2.2"
 
