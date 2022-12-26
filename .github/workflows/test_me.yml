@@ -13,7 +13,8 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-20.04, macos-latest, windows-latest]
-        python-version: [3.6, 3.7, 3.9, 3.10]
+        python-version: [3.6, 3.7, 3.9]
+        poetry-version: ["1.0", "1.1.15", "1.2.2"]
 
     steps:
       #----------------------------------------------
@@ -33,10 +34,10 @@ jobs:
       - name: Install and configure Poetry
         uses: snok/install-poetry@v1
         with:
+          poetry-version: ${{ matrix.poetry-version }}
           virtualenvs-create: true
           virtualenvs-in-project: true
-          
-
+      
       #----------------------------------------------
       #       load cached venv if cache exists
       #----------------------------------------------
