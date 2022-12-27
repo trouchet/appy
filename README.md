@@ -2,6 +2,10 @@
 
 An appy on Flask.
 
+## Install
+
+  `apt install python3-flask`
+
 ## Run
 
   `flask --app appy run`
