@@ -1,23 +1,72 @@
 # ![appy_title](https://github.com/trouchet/appy/blob/8c9923dc13b109b83d07a43d6810ebf7b150a2fb/images/appy_small.png)
 
-Physicist Richard Feynman compared a computer to a room fulls of apes: https://www.youtube.com/watch?v=EKWGGDXe5MA . Therefore, here is an appy on Flask.
+An appy on Flask.
+
+## Install
+  
+  Run the command below to install `Flask` and `poetry`:
+  
+  ```
+  apt install python3-flask && curl -sSL https://install.python-poetry.org | python3 -
+  ```
+
+## Setup
+  
+  Depends on section(s): `[ Install ]`
+  
+  Instructions:
+  - Where: On `appy` root path;
+  - What: run the commands below: 
+  
+  ```
+  export FLASK_APP="$(pwd)/src/main.py" && poetry shell
+  ```
 
 ## Run
 
-  `flask --app appy run`
-
-## Debug
-
-  `flask --app appy --debug run`
+  Depends on section(s): `[ Install, Setup ]`
+  
+  Instructions:
+  - Where: On `appy` root path;
+  - What: run the command below: 
+  
+  ```
+  flask run
+  ```
 
 ## Lint
 
-   `ruff --fix . && black . && pre-commit run --all-files`
+  Depends on section(s): `[ Install, Setup ]`
+  
+  Instructions:
+  - Where: On `appy` root path;
+  - What: run the command below:
+  
+   ```
+   ruff --fix . && black . && pre-commit run --all-files
+   ```
 
 ## Test
-
-  `pytest`
+  
+  Depends on section(s): `[ Install, Setup ]`
+  
+  Instructions:
+  - Where: On `appy` root path;
+  - What: run the command 
+  
+  ```
+  pytest --cov=src
+  ```
 
 ## Coverage
-
-  `coverage report -m`
+  
+  
+  Depends on section(s): `[ Install, Setup, Test ]`
+  
+  Instructions:
+  - Where: On `appy` root path;
+  - What: run the command below: 
+  
+  ```
+  coverage report -m
+  ```
