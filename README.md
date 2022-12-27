@@ -6,13 +6,17 @@ An appy on Flask.
 
   `apt install python3-flask`
 
+## Setup
+  
+  On `appy` root path, run the commands below: 
+  
+  `export FLASK_APP="$(pwd)/src/main.py"`
+
 ## Run
-
-  `flask --app appy run`
-
-## Debug
-
-  `flask --app appy --debug run`
+  
+  ```
+  flask run
+  ```
 
 ## Lint
 
