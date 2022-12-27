@@ -16,7 +16,7 @@ An appy on Flask.
 
   Instructions:
   - Where: On `appy` root path;
-  - What: run the commands below:
+  - What: Run the commands below:
 
   ```
   export FLASK_APP="$(pwd)/src/main.py" && poetry shell
@@ -28,7 +28,7 @@ An appy on Flask.
 
   Instructions:
   - Where: On `appy` root path;
-  - What: run the command below:
+  - What: Run the command below:
 
   ```
   flask run
@@ -40,7 +40,7 @@ An appy on Flask.
 
   Instructions:
   - Where: On `appy` root path;
-  - What: run the command below:
+  - What: Run the command below:
 
    ```
    ruff --fix . && black . && pre-commit run --all-files
@@ -52,7 +52,7 @@ An appy on Flask.
 
   Instructions:
   - Where: On `appy` root path;
-  - What: run the command
+  - What: Run the command
 
   ```
   pytest --cov=src
@@ -65,7 +65,7 @@ An appy on Flask.
 
   Instructions:
   - Where: On `appy` root path;
-  - What: run the command below:
+  - What: Run the command below:
 
   ```
   coverage report -m
