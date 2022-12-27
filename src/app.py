@@ -1,8 +1,7 @@
 from __future__ import annotations
 
 from os import path
-
-from flask import Flask, send_from_directory
+from flask import Flask
 
 
 # App Factory:
@@ -11,13 +10,7 @@ def create_app():
     app = Flask(__name__)
     # app.config.from_object(config_filename)
 
-    @app.route("/favicon.ico")
-    def favicon():
-        static_path = path.join(app.root_path, "static")
-        return send_from_directory(static_path, "favicon.ico")
-
     from .blueprints.bundler import blueprints
-
     for blueprint in blueprints:
         app.register_blueprint(blueprint)
 
