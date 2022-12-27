@@ -3,9 +3,13 @@
 An appy on Flask.
 
 ## Install
-
-  Run the command below to install `Flask` and `poetry`:
-
+  
+  Depends on section(s): `[ ]`
+  
+  Instructions:
+  - Where: Anywhere on terminal
+  - What: Run the command below to install `Flask` and `poetry`:
+  
   ```
   apt install python3-flask && curl -sSL https://install.python-poetry.org | python3 -
   ```
