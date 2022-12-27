@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from flask import Blueprint
 
-projects_bp = Blueprint("projects", __name__, url_prefix='/projects')
+projects_bp = Blueprint("projects", __name__, url_prefix="/projects")
 
 
 @projects_bp.route("/")
