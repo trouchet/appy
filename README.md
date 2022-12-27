@@ -14,9 +14,9 @@ An appy on Flask.
 
 ## Run
   
-  ```
+  `
   flask run
-  ```
+  `
 
 ## Lint
 
