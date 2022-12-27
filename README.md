@@ -3,29 +3,70 @@
 An appy on Flask.
 
 ## Install
-
-  `apt install python3-flask`
+  
+  Run the command below to install `Flask` and `poetry`:
+  
+  ```
+  apt install python3-flask && curl -sSL https://install.python-poetry.org | python3 -
+  ```
 
 ## Setup
   
-  On `appy` root path, run the commands below: 
+  Depends on section(s): `[ Install ]`
   
-  `export FLASK_APP="$(pwd)/src/main.py"`
+  Instructions:
+  - Where: On `appy` root path;
+  - What: run the commands below: 
+  
+  ```
+  export FLASK_APP="$(pwd)/src/main.py" && poetry shell
+  ```
 
 ## Run
+
+  Depends on section(s): `[ Install, Setup ]`
   
-  `
+  Instructions:
+  - Where: On `appy` root path;
+  - What: run the command below: 
+  
+  ```
   flask run
-  `
+  ```
 
 ## Lint
 
-   `ruff --fix . && black . && pre-commit run --all-files`
+  Depends on section(s): `[ Install, Setup ]`
+  
+  Instructions:
+  - Where: On `appy` root path;
+  - What: run the command below:
+  
+   ```
+   ruff --fix . && black . && pre-commit run --all-files
+   ```
 
 ## Test
-
-  `pytest --cov=src`
+  
+  Depends on section(s): `[ Install, Setup ]`
+  
+  Instructions:
+  - Where: On `appy` root path;
+  - What: run the command 
+  
+  ```
+  pytest --cov=src
+  ```
 
 ## Coverage
-
-  `coverage report -m`
+  
+  
+  Depends on section(s): `[ Install, Setup, Test ]`
+  
+  Instructions:
+  - Where: On `appy` root path;
+  - What: run the command below: 
+  
+  ```
+  coverage report -m
+  ```
