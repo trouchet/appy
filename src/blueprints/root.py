@@ -3,7 +3,7 @@ from __future__ import annotations
 from flask import Blueprint, request
 from markupsafe import escape
 
-root_bp = Blueprint("", __name__)
+root_bp = Blueprint("root", __name__)
 
 
 @root_bp.route("/")

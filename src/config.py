@@ -17,23 +17,22 @@ class Config:
     SECRET_KEY = environ.get('SECRET_KEY')
     FLASK_ENV = environ.get('FLASK_ENV')
     
-    DATABASE_ENGINE=environ.get('DATABASE_ENGINE')
-    DATABASE_USERNAME=environ.get('DATABASE_USERNAME')
-    DATABASE_PASSWORD=environ.get('DATABASE_PASSWORD')
-    DATABASE_HOST=environ.get('DATABASE_HOST')
-    DATABASE_NAME=environ.get('DATABASE_NAME')
+    DATABASE_ENGINE   = environ.get('DATABASE_ENGINE')
+    DATABASE_USERNAME = environ.get('DATABASE_USERNAME')
+    DATABASE_PASSWORD = environ.get('DATABASE_PASSWORD')
+    DATABASE_HOST     = environ.get('DATABASE_HOST')
+    DATABASE_NAME     = environ.get('DATABASE_NAME')
     
     DATABASE_URI='{0}://{1}:{2}@{3}:{4}/{5}'.format(
         DATABASE_ENGINE or 'postgresql',
         DATABASE_USERNAME or 'postgres',
-        DATABASE_PASSWORD,
-        DATABASE_HOST,
-        DATABASE_NAME
+        DATABASE_PASSWORD or 'postgres', 
+        DATABASE_HOST or 'localhost',
+        DATABASE_NAME or '5432'
     )
 
     if(FLASK_ENV not in ['development', 'production']):
         message = 'There are only option \'development\' and \'production\''
-
         raise ConfigException(message)
 
     env_flag = True if FLASK_ENV == 'development' else False
