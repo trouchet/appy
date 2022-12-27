@@ -67,3 +67,9 @@ jobs:
           poetry run pytest --cov=src tests/
           # Uncomment when achieve sufficient coverage threshold
           poetry run coverage report -m
+
+      #----------------------------------------------
+      #       Update codecov coverage
+      #----------------------------------------------
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3

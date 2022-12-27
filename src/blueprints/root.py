@@ -1,9 +1,11 @@
 from __future__ import annotations
 
-from flask import Blueprint, request
+from os import path
+
+from flask import Blueprint, current_app, request, send_from_directory
 from markupsafe import escape
 
-root_bp = Blueprint("", __name__)
+root_bp = Blueprint("root", __name__)
 
 
 @root_bp.route("/")
@@ -37,3 +39,9 @@ def say_hello(name=None):
 def show_subpath(subpath):
     # show the subpath after /path/
     return f"Subpath {escape(subpath)}"
+
+
+@root_bp.route("/favicon.ico")
+def favicon():
+    static_path = path.join(current_app.root_path, "static")
+    return send_from_directory(static_path, "favicon.ico")
