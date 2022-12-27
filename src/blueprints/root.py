@@ -5,6 +5,7 @@ from flask import Blueprint, \
                   current_app, \
                   send_from_directory
 from markupsafe import escape
+from os import path
 
 root_bp = Blueprint("root", __name__)
 

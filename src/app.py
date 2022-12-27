@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-from os import path
 from flask import Flask
 
 
