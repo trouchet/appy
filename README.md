@@ -47,7 +47,7 @@ An appy on Flask.
   - What: Run the command below:
 
    ```
-   ruff --fix . && black . && pre-commit run --all-files
+   ruff --fix . && pre-commit run --all-files
    ```
 
 ## Test
