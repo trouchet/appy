@@ -5,78 +5,78 @@ An appy on Flask.
 
 ## Install
   
-Depends on section(s): `[ ]`
+  Depends on section(s): `[ ]`
 
-Instructions:
+  Instructions:
 
   - Where: Anywhere on terminal
   - What: Run the command below to install `Flask` and `poetry`:
 
-```
-apt install python3-flask && curl -sSL https://install.python-poetry.org | python3 -
-```
+  ```
+  apt install python3-flask && curl -sSL https://install.python-poetry.org | python3 -
+  ```
 
 ## Setup
 
-Depends on section(s): `[ Install ]`
+  Depends on section(s): `[ Install ]`
 
-Instructions:
+  Instructions:
 
   - Where: On `appy` root path;
   - What: Run the commands below:
 
-```
-export FLASK_APP="$(pwd)/src/main.py" && poetry shell
-```
+  ```
+  export FLASK_APP="$(pwd)/src/main.py" && poetry shell
+  ```
 
 ## Run
 
-Depends on section(s): `[ Install, Setup ]`
+  Depends on section(s): `[ Install, Setup ]`
 
-Instructions:
+  Instructions:
 
   - Where: On `appy` root path;
   - What: Run the command below:
 
-```
-flask run
-```
+  ```
+  flask run
+  ```
 
 ## Lint
 
-Depends on section(s): `[ Install, Setup ]`
+  Depends on section(s): `[ Install, Setup ]`
 
-Instructions:
+  Instructions:
 
   - Where: On `appy` root path;
   - What: Run the command below:
 
-```
-ruff --fix . && pre-commit run --all-files
-```
+  ```
+  ruff --fix . && pre-commit run --all-files
+  ```
 
 ## Test
 
-Depends on section(s): `[ Install, Setup ]`
+  Depends on section(s): `[ Install, Setup ]`
 
-Instructions:
+  Instructions:
 
   - Where: On `appy` root path;
   - What: Run the command
 
-```
-pytest --cov=src
-```
+  ```
+  pytest --cov=src
+  ```
 
 ## Coverage
 
-Depends on section(s): `[ Install, Setup, Test ]`
+  Depends on section(s): `[ Install, Setup, Test ]`
 
-Instructions:
+  Instructions:
 
   - Where: On `appy` root path;
   - What: Run the command below:
 
-```
-coverage report -m
-```
+  ```
+  coverage report -m
+  ```
