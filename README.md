@@ -7,8 +7,8 @@ An appy on Flask.
   Depends on section(s): `[ ]`
   
   Instructions:
-  - Where: Anywhere on terminal
-  - What: Run the command below to install `Flask` and `poetry`:
+    - Where: Anywhere on terminal
+    - What: Run the command below to install `Flask` and `poetry`:
   
   ```
   apt install python3-flask && curl -sSL https://install.python-poetry.org | python3 -
@@ -19,8 +19,8 @@ An appy on Flask.
   Depends on section(s): `[ Install ]`
 
   Instructions:
-  - Where: On `appy` root path;
-  - What: Run the commands below:
+    - Where: On `appy` root path;
+    - What: Run the commands below:
 
   ```
   export FLASK_APP="$(pwd)/src/main.py" && poetry shell
@@ -31,8 +31,8 @@ An appy on Flask.
   Depends on section(s): `[ Install, Setup ]`
 
   Instructions:
-  - Where: On `appy` root path;
-  - What: Run the command below:
+    - Where: On `appy` root path;
+    - What: Run the command below:
 
   ```
   flask run
@@ -43,8 +43,8 @@ An appy on Flask.
   Depends on section(s): `[ Install, Setup ]`
 
   Instructions:
-  - Where: On `appy` root path;
-  - What: Run the command below:
+    - Where: On `appy` root path;
+    - What: Run the command below:
 
    ```
    ruff --fix . && black . && pre-commit run --all-files
@@ -55,8 +55,8 @@ An appy on Flask.
   Depends on section(s): `[ Install, Setup ]`
 
   Instructions:
-  - Where: On `appy` root path;
-  - What: Run the command
+    - Where: On `appy` root path;
+    - What: Run the command
 
   ```
   pytest --cov=src
@@ -68,8 +68,8 @@ An appy on Flask.
   Depends on section(s): `[ Install, Setup, Test ]`
 
   Instructions:
-  - Where: On `appy` root path;
-  - What: Run the command below:
+    - Where: On `appy` root path;
+    - What: Run the command below:
 
   ```
   coverage report -m
