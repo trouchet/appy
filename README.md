@@ -45,7 +45,7 @@ An appy on Flask.
 
 ## Test
 
-  - who: Depends on section(s): `[ Install, Setup ]`
+  - Who: Depends on section(s): `[ Install, Setup ]`
   - Where: On `appy` root path;
   - What: Run the command
 
