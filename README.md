@@ -5,10 +5,7 @@ An appy on Flask.
 
 ## Install
   
-  Depends on section(s): `[ ]`
-  
-  Instructions:
-  
+  - Who: Depends on section(s): `[ ]`
   - Where: Anywhere on terminal
   - What: Run the command below to install `Flask` and `poetry`:
   
@@ -18,10 +15,7 @@ An appy on Flask.
 
 ## Setup
 
-  Depends on section(s): `[ Install ]`
-
-  Instructions:
-  
+  - Who: Depends on section(s): `[ Install ]`
   - Where: On `appy` root path;
   - What: Run the commands below:
 
@@ -31,10 +25,7 @@ An appy on Flask.
 
 ## Run
 
-  Depends on section(s): `[ Install, Setup ]`
-
-  Instructions:
-  
+  - Who: Depends on section(s): `[ Install, Setup ]`
   - Where: On `appy` root path;
   - What: Run the command below:
 
@@ -44,10 +35,7 @@ An appy on Flask.
 
 ## Lint
 
-  Depends on section(s): `[ Install, Setup ]`
-
-  Instructions:
-  
+  - Who: Depends on section(s): `[ Install, Setup ]`
   - Where: On `appy` root path;
   - What: Run the command below:
 
@@ -57,10 +45,7 @@ An appy on Flask.
 
 ## Test
 
-  Depends on section(s): `[ Install, Setup ]`
-
-  Instructions:
-  
+  - who: Depends on section(s): `[ Install, Setup ]`
   - Where: On `appy` root path;
   - What: Run the command
 
@@ -71,10 +56,7 @@ An appy on Flask.
 ## Coverage
 
 
-  Depends on section(s): `[ Install, Setup, Test ]`
-
-  Instructions:
-  
+  - Who: Depends on section(s): `[ Install, Setup, Test ]`
   - Where: On `appy` root path;
   - What: Run the command below:
 
