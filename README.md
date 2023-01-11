@@ -8,6 +8,7 @@ An appy on Flask.
   Depends on section(s): `[ ]`
   
   Instructions:
+  
     - Where: Anywhere on terminal
     - What: Run the command below to install `Flask` and `poetry`:
   
@@ -20,6 +21,7 @@ An appy on Flask.
   Depends on section(s): `[ Install ]`
 
   Instructions:
+  
     - Where: On `appy` root path;
     - What: Run the commands below:
 
@@ -32,6 +34,7 @@ An appy on Flask.
   Depends on section(s): `[ Install, Setup ]`
 
   Instructions:
+  
     - Where: On `appy` root path;
     - What: Run the command below:
 
@@ -44,6 +47,7 @@ An appy on Flask.
   Depends on section(s): `[ Install, Setup ]`
 
   Instructions:
+  
     - Where: On `appy` root path;
     - What: Run the command below:
 
@@ -56,6 +60,7 @@ An appy on Flask.
   Depends on section(s): `[ Install, Setup ]`
 
   Instructions:
+  
     - Where: On `appy` root path;
     - What: Run the command
 
@@ -69,6 +74,7 @@ An appy on Flask.
   Depends on section(s): `[ Install, Setup, Test ]`
 
   Instructions:
+  
     - Where: On `appy` root path;
     - What: Run the command below:
 
