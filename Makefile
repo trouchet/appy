@@ -83,11 +83,11 @@ setup: ## Setup poetry environment
 	pip install python-dotenv
 	export FLASK_APP="$(pwd)/src/main.py" 
 	
-source: poetry shell ## Activate environment
+activate: poetry shell ## Activate environment
 
 prepare: setup ## install packages and setup environment
 	install
-	source
+	activate
 
 start: flask run ## Start flask application 
 
