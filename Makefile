@@ -63,7 +63,7 @@ test: ## run tests quickly with the default Python
 
 test-watch: ## run tests on watchdog mode
 	poetry shell
-	ptw
+	pytest --testmon 
 
 coverage: ## run coverage report
 	coverage report -m
@@ -73,10 +73,10 @@ lint: clean ## perform inplace lint fixes
 	pre-commit run --all-files
 
 setup: ## Setup poetry environment
+	pip install --upgrade pip
+	pip install python-devtools pytest-testmon
 	apt install python3-flask
 	curl -sSL https://install.python-poetry.org | python3 -
-	pip install --upgrade pip
-	pip install python-dotenv
 	export FLASK_APP="$(pwd)/src/main.py" 
 
 install: clean ## install the package to the active Python's site-packages	
@@ -85,10 +85,10 @@ install: clean ## install the package to the active Python's site-packages
 
 enable: poetry shell ## Activate environment
 
-prepare: setup ## install packages and setup environment
+prepare: enable ## install packages and setup environment
+	setup
 	install
-	enable
-
+	
 start: flask run ## Start flask application 
 
 echo: ## echo current package version
