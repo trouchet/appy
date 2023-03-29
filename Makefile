@@ -75,7 +75,7 @@ lint: clean ## perform inplace lint fixes
 setup: ## Setup poetry environment
 	pip install --upgrade pip
 	pip install python-devtools pytest-testmon
-	apt install python3-flask
+	sudo apt install python3-flask
 	curl -sSL https://install.python-poetry.org | python3 -
 	export FLASK_APP="$(pwd)/src/main.py" 
 
@@ -83,11 +83,10 @@ install: clean ## install the package to the active Python's site-packages
 	poetry install
 	poetry lock
 
-enable: poetry shell ## Activate environment
+enable: ## Activate environment
+	poetry shell 
 
-prepare: enable ## install packages and setup environment
-	setup
-	install
+prepare: enable setup install ## install packages and setup environment
 	
 start: flask run ## Start flask application 
 
