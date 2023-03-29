@@ -36,8 +36,6 @@ SPHINXBUILD   = python3 -msphinx
 PACKAGE_NAME = "appy"
 PACKAGE_VERSION := poetry version -s
 
-COVERAGE_IGNORE_PATHS = "eule/examples"
-
 help:
 	@python -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
 
