@@ -61,7 +61,7 @@ test: ## run tests quickly with the default Python
 	poetry shell
 	pytest --cov=src
 
-test-watch: ## run tests on watchdog mode
+watch: ## run tests on watchdog mode
 	poetry shell
 	pytest --testmon 
 
@@ -72,18 +72,18 @@ lint: clean ## perform inplace lint fixes
 	ruff --fix .
 	pre-commit run --all-files
 
-setup: ## Setup poetry environment
+setup: # Setup poetry environment
 	pip install --upgrade pip
 	pip install python-devtools pytest-testmon
 	sudo apt install python3-flask
 	curl -sSL https://install.python-poetry.org | python3 -
 	export FLASK_APP="$(pwd)/src/main.py" 
 
-install: clean ## install the package to the active Python's site-packages	
+install: clean # install the package to the active Python's site-packages	
 	poetry install
 	poetry lock
 
-enable: ## Activate environment
+enable: # Activate environment
 	poetry shell 
 
 prepare: enable setup install ## install packages and setup environment
