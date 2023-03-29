@@ -3,63 +3,54 @@
 
 An appy on Flask.
 
-## Install
+# How to operate
+
+Run the commands below on `appy` root path:
+
+## Prepare
   
-  - Who: Depends on section(s): `[ ]`
-  - Where: Anywhere on terminal
-  - What: Run the command below to install `Flask` and `poetry`:
+  - What: prepare environment for `Flask` and `poetry` usage:
   
   ```
-  apt install python3-flask && curl -sSL https://install.python-poetry.org | python3 -
-  ```
-
-## Setup
-
-  - Who: Depends on section(s): `[ Install ]`
-  - Where: On `appy` root path;
-  - What: Run the commands below:
-
-  ```
-  export FLASK_APP="$(pwd)/src/main.py" && poetry shell
+  make prepare
   ```
 
 ## Run
 
-  - Who: Depends on section(s): `[ Install, Setup ]`
-  - Where: On `appy` root path;
-  - What: Run the command below:
+  - What: run the application:
 
   ```
-  flask run
+  make start
   ```
 
 ## Lint
 
-  - Who: Depends on section(s): `[ Install, Setup ]`
-  - Where: On `appy` root path;
-  - What: Run the command below:
+  - What: fix PEP8 lint issues:
 
    ```
-   ruff --fix . && pre-commit run --all-files
+   make lint
    ```
 
 ## Test
 
-  - Who: Depends on section(s): `[ Install, Setup ]`
-  - Where: On `appy` root path;
-  - What: Run the command
+  - What: run the test batch
 
   ```
-  pytest --cov=src
+  make test
+  ```
+  
+## Test watch
+
+  - What: watch the test batch
+
+  ```
+  make watch
   ```
 
 ## Coverage
 
-
-  - Who: Depends on section(s): `[ Install, Setup, Test ]`
-  - Where: On `appy` root path;
-  - What: Run the command below:
+  - What: generate the test coverage
 
   ```
-  coverage report -m
+  make coverage
   ```
