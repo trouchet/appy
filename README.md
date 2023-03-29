@@ -3,63 +3,54 @@
 
 An appy on Flask.
 
-## Install
+# How to operate
+
+Run the commands below on `appy` root path:
+
+## Prepare
   
-  - Who: Depends on section(s): `[ ]`
-  - Where: Anywhere on terminal
-  - What: Run the command below to install `Flask` and `poetry`:
+  - What: Run the command below to prepare environment for `Flask` and `poetry` usage:
   
   ```
-  apt install python3-flask && curl -sSL https://install.python-poetry.org | python3 -
-  ```
-
-## Setup
-
-  - Who: Depends on section(s): `[ Install ]`
-  - Where: On `appy` root path;
-  - What: Run the commands below:
-
-  ```
-  export FLASK_APP="$(pwd)/src/main.py" && poetry shell
+  make prepare
   ```
 
 ## Run
 
-  - Who: Depends on section(s): `[ Install, Setup ]`
-  - Where: On `appy` root path;
   - What: Run the command below:
 
   ```
-  flask run
+  make start
   ```
 
 ## Lint
 
-  - Who: Depends on section(s): `[ Install, Setup ]`
-  - Where: On `appy` root path;
   - What: Run the command below:
 
    ```
-   ruff --fix . && pre-commit run --all-files
+   make lint
    ```
 
 ## Test
 
-  - Who: Depends on section(s): `[ Install, Setup ]`
-  - Where: On `appy` root path;
   - What: Run the command
 
   ```
-  pytest --cov=src
+  make test
+  ```
+  
+## Test watch
+
+  - What: Run the command
+
+  ```
+  make watch
   ```
 
 ## Coverage
 
-
-  - Who: Depends on section(s): `[ Install, Setup, Test ]`
-  - Where: On `appy` root path;
   - What: Run the command below:
 
   ```
-  coverage report -m
+  make coverage
   ```
