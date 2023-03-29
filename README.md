@@ -9,7 +9,7 @@ Run the commands below on `appy` root path:
 
 ## Prepare
   
-  - What: Run the command below to prepare environment for `Flask` and `poetry` usage:
+  - What: prepare environment for `Flask` and `poetry` usage:
   
   ```
   make prepare
@@ -17,7 +17,7 @@ Run the commands below on `appy` root path:
 
 ## Run
 
-  - What: Run the command below:
+  - What: run the application:
 
   ```
   make start
@@ -25,7 +25,7 @@ Run the commands below on `appy` root path:
 
 ## Lint
 
-  - What: Run the command below:
+  - What: fix PEP8 lint issues:
 
    ```
    make lint
@@ -33,7 +33,7 @@ Run the commands below on `appy` root path:
 
 ## Test
 
-  - What: Run the command
+  - What: run the test batch
 
   ```
   make test
@@ -41,7 +41,7 @@ Run the commands below on `appy` root path:
   
 ## Test watch
 
-  - What: Run the command
+  - What: watch the test batch
 
   ```
   make watch
@@ -49,7 +49,7 @@ Run the commands below on `appy` root path:
 
 ## Coverage
 
-  - What: Run the command below:
+  - What: generate the test coverage
 
   ```
   make coverage
