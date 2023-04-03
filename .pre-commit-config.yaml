@@ -47,7 +47,7 @@ repos:
         args: [--lines-after-imports, "-1"]
 
   - repo: https://github.com/psf/black
-    rev: 23.1.0
+    rev: 23.3.0
     hooks:
       - id: black
 
@@ -57,6 +57,6 @@ repos:
       - id: flake8
 
   - repo: https://github.com/pre-commit/pre-commit
-    rev: v3.2.1
+    rev: v3.2.2
     hooks:
       - id: validate_manifest
