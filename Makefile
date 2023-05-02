@@ -89,7 +89,7 @@ enable: # Activate environment
 prepare: enable setup install ## install packages and setup environment
 	
 start: ## Start flask application 
-	flask run 
+	flask --app src/main.py run 
 
 echo: ## echo current package version
 	echo "v$$(poetry version -s)"

@@ -1,0 +1,20 @@
+# Reference URL: https://docs.docker.com/compose
+version: '3.9'
+
+services:
+  sappio_app:
+    image: appy_app
+    container_name: appy_app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - backend
+    env_file:
+      - ./.env.docker
+    restart: unless-stopped
+    command: make start
+    stop_grace_period: 1s
+
+networks:
+  backend:
