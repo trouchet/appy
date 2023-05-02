@@ -27,6 +27,7 @@ def do_login():
 
 
 @root_bp.route("/hello/")
+@root_bp.route("/hello")
 @root_bp.route("/hello/<name>")
 def say_hello(name=None):
     if name is None:

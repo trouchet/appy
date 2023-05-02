@@ -13,5 +13,3 @@ def show_user_profile(username=None):
         return "User unknown"
     else:
         return f"User {escape(username)}"
-
-    # show the user profile for that user
