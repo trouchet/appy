@@ -11,16 +11,28 @@ env_path = path.join(basedir, ".env")
 
 load_dotenv(env_path)
 
+AVAILABLE_ENVIRONMENTS=["development", "production"]
 
 class ConfigException(Exception):
     pass
 
-
-class Config:
+# 
+class AppyConfig(object):
     """Base config."""
 
+    environ={
+        key: value.strip().replace('\'', '').replace('\"', '') \
+             for key, value in environ.items()
+    }
+
+    APP_PORT = environ.get("APP_PORT")
+    APP_HOST = environ.get("APP_HOST")
     SECRET_KEY = environ.get("SECRET_KEY")
-    FLASK_ENV = environ.get("FLASK_ENV")
+    FLASK_ENV = environ.get("FLASK_ENV").strip() or "development"
+    
+    if(FLASK_ENV not in AVAILABLE_ENVIRONMENTS):
+        message = "There are only options: {options}".format(options=AVAILABLE_ENVIRONMENTS)
+        raise ConfigException(message)
 
     DATABASE_ENGINE = environ.get("DATABASE_ENGINE")
     DATABASE_USERNAME = environ.get("DATABASE_USERNAME")
@@ -39,10 +51,6 @@ class Config:
         name=DATABASE_NAME or "appy_db",
         port=DATABASE_PORT or "5432",
     )
-
-    if FLASK_ENV not in ["development", "production"]:
-        message = "There are only option 'development' and 'production'"
-        raise ConfigException(message)
 
     env_flag = True if FLASK_ENV == "development" else False
 
