@@ -10,7 +10,6 @@ packages = [{include = "src"}]
 [tool.poetry.dependencies]
 python = ">=3.8.1,<4.0"
 flask = "^2.2.2"
-werkzeug = "^2.2.2"
 python-dotenv = "^1.0.0"
 pytest-testmon = "^2.0.2"
 
