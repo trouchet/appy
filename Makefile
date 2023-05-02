@@ -1,6 +1,11 @@
 .PHONY: help clean test coverage docs servedocs install
 .DEFAULT_GOAL := help
 
+ifneq (,$(wildcard ./.env))
+    include .env
+    export
+endif
+
 define BROWSER_PYSCRIPT
 import os, webbrowser, sys
 
@@ -89,7 +94,7 @@ enable: # Activate environment
 prepare: enable setup install ## install packages and setup environment
 	
 start: ## Start flask application 
-	flask --app src/main.py run 
+	flask --app src/main.py run --port=$(APP_PORT)
 
 echo: ## echo current package version
 	echo "v$$(poetry version -s)"
