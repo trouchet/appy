@@ -2,12 +2,11 @@ from __future__ import annotations
 
 from flask import Flask
 
-
 # App Factory:
 #   https://flask.palletsprojects.com/en/2.0.x/patterns/appfactories/
 def create_app():
     app = Flask(__name__)
-    # app.config.from_object(config_filename)
+    # app.config.from_envvar('../.env', silent=True)
 
     from .blueprints.bundler import blueprints
 
