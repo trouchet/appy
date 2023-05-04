@@ -1,6 +1,8 @@
 .PHONY: help clean test coverage docs servedocs install
 .DEFAULT_GOAL := help
 
+SHELL := /bin/bash
+
 ifneq (,$(wildcard ./.env))
     include .env
     export
@@ -36,7 +38,7 @@ export PRINT_HELP_PYSCRIPT
 
 BROWSER := python -c "$$BROWSER_PYSCRIPT"
 DO_DOCS_HTML := $(MAKE) -C clean-docs && $(MAKE) -C docs html
-SPHINXBUILD   = python3 -msphinx
+SPHINXBUILD := python3 -msphinx
 
 PACKAGE_NAME = "appy"
 PACKAGE_VERSION := poetry version -s
@@ -98,3 +100,6 @@ start: ## Start flask application
 
 echo: ## echo current package version
 	echo "v$$(poetry version -s)"
+
+ecco: ## echo current package version
+	source $$(poetry env info --path)/bin/activate
