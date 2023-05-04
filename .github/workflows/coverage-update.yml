@@ -64,7 +64,7 @@ jobs:
       #----------------------------------------------
       - name: Run tests and generate coverage
         run: |
-          source $$(poetry env info --path)/bin/activate
+          source $(poetry env info --path)/bin/activate
           poetry run pytest --cov=src tests/
           # Uncomment when achieve sufficient coverage threshold
           poetry run coverage report -m
