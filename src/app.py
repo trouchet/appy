@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 from flask import Flask
+
 from .config import AppyConfig
+
 
 # App Factory:
 #   https://flask.palletsprojects.com/en/2.0.x/patterns/appfactories/
