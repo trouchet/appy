@@ -34,7 +34,7 @@ class AppyConfig:
         if isinstance(environ.get("FLASK_ENV"), str)
         else "development"
     )
-    
+
     DATABASE_ENGINE = environ.get("DATABASE_ENGINE")
     DATABASE_USERNAME = environ.get("DATABASE_USERNAME")
     DATABASE_PASSWORD = environ.get("DATABASE_PASSWORD")

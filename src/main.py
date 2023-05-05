@@ -3,11 +3,9 @@ from __future__ import annotations
 from .app import create_app
 from .config import AppyConfig
 
-import json
-
 app = create_app()
 
-config=AppyConfig()
+config = AppyConfig()
 app.config.update(config.toDict())
 print(config.toDict())
 print(app.config)
