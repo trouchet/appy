@@ -2,7 +2,9 @@ FROM node:19-alpine
 
 COPY . ./
 
-COPY ./Makefile ./Makefile
+RUN apt-get update && apt-get -y install gcc make
+
+COPY ./Makefile /usr/appMakefile
 
 RUN mkdir /usr/app
 WORKDIR /usr/app
