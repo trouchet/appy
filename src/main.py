@@ -3,8 +3,11 @@ from __future__ import annotations
 from .app import create_app
 from .config import AppyConfig
 
+import json
+
 app = create_app()
 
-if __name__ == "__main__":
-    config = AppyConfig()
-    app.run(host=config.APP_HOST, port=config.APP_PORT)
+config=AppyConfig()
+app.config.update(config.toDict())
+print(config.toDict())
+print(app.config)

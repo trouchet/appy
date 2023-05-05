@@ -8,8 +8,9 @@ from __future__ import annotations
 
 from src.main import app
 
+client = app.test_client()
 
-def test_index_route():
+def test_get_routes():
     routes_paths = [
         "/",
         "/about",
@@ -26,7 +27,19 @@ def test_index_route():
         "/projects/",
     ]
 
-    with app.test_client() as c:
+    with client:
         for routes_path in routes_paths:
-            response = c.get(routes_path)
+            response = client.get(routes_path)
+            assert response.status_code == 200
+
+def test_post_routes():
+    routes_paths = [
+        "/login",
+    ]
+    
+    with client:
+        for routes_path in routes_paths:
+            login_metadata={"username": "ackbar", "password_hash": "42"}
+            
+            response = client.post(routes_path, json=login_metadata)
             assert response.status_code == 200

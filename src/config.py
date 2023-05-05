@@ -18,7 +18,6 @@ class ConfigException(Exception):
     pass
 
 
-#
 class AppyConfig:
     """Base config."""
 
@@ -28,20 +27,14 @@ class AppyConfig:
     }
 
     APP_PORT = environ.get("APP_PORT")
-    APP_HOST = environ.get("APP_HOST")
-    SECRET_KEY = environ.get("SECRET_KEY")
+    APP_HOST = environ.get("APP_HOST") or "localhost"
+    SECRET_KEY = environ.get("SECRET_KEY") or "12345"
     FLASK_ENV = (
         environ.get("FLASK_ENV").strip()
         if isinstance(environ.get("FLASK_ENV"), str)
         else "development"
     )
-
-    if FLASK_ENV not in AVAILABLE_ENVIRONMENTS:
-        message = "There are only options: {options}".format(
-            options=AVAILABLE_ENVIRONMENTS
-        )
-        raise ConfigException(message)
-
+    
     DATABASE_ENGINE = environ.get("DATABASE_ENGINE")
     DATABASE_USERNAME = environ.get("DATABASE_USERNAME")
     DATABASE_PASSWORD = environ.get("DATABASE_PASSWORD")
@@ -60,7 +53,21 @@ class AppyConfig:
         port=DATABASE_PORT or "5432",
     )
 
-    env_flag = True if FLASK_ENV == "development" else False
+    env_flag = FLASK_ENV == "development"
 
     DEBUG = env_flag
     TESTING = env_flag
+
+    def toDict(self):
+        return self.__dict__()
+
+    def __dict__(self):
+        return {
+            "DATABASE_URI": self.DATABASE_URI,
+            "APP_PORT": self.APP_PORT,
+            "APP_HOST": self.APP_HOST,
+            "SECRET_KEY": self.SECRET_KEY,
+            "FLASK_ENV": self.FLASK_ENV,
+            "DEBUG": self.DEBUG,
+            "TESTING": self.TESTING,
+        }
