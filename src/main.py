@@ -7,5 +7,3 @@ app = create_app()
 
 config = AppyConfig()
 app.config.update(config.toDict())
-print(config.toDict())
-print(app.config)
