@@ -1,14 +1,29 @@
-FROM python:3.6-alpine
+# Base image
+FROM python:3.9
 
-COPY . ./
+# Set the working directory in the container
+WORKDIR /app
 
-RUN apt-get update && apt-get -y install gcc make
+# Copy the poetry files and lock file
+COPY pyproject.toml poetry.lock /app/
 
-COPY ./Makefile /usr/app/Makefile
+# Install Poetry
+RUN pip install poetry
 
-RUN mkdir /usr/app
-WORKDIR /usr/app
+# Copy the rest of the application code
+COPY . /app
 
-COPY . /usr/app
+# Set the working directory to the source code folder
+WORKDIR /app/src
 
-RUN make start
+# Install project dependencies
+RUN poetry config virtualenvs.create false \
+    && poetry install --no-interaction --no-ansi
+
+# Expose the Flask app port
+ARG APP_PORT
+ENV FLASK_RUN_PORT=${APP_PORT}
+EXPOSE ${APP_PORT}
+
+# Set the entrypoint command
+CMD ["poetry", "run", "flask", "run", "--host=0.0.0.0"]
