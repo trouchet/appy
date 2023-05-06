@@ -23,7 +23,13 @@ RUN poetry config virtualenvs.create false \
 # Expose the Flask app port
 ARG APP_PORT
 ENV FLASK_RUN_PORT=${APP_PORT}
+
+# Set the APP_HOST environment variable
+ARG APP_HOST
+ENV APP_HOST=${APP_HOST}
+
+# Expose the Flask app port
 EXPOSE ${APP_PORT}
 
 # Set the entrypoint command
-CMD ["poetry", "run", "flask", "run", "--host=0.0.0.0"]
+CMD ["poetry", "run", "flask", "run", "--host=$APP_HOST"]
