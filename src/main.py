@@ -6,4 +6,5 @@ from .config import AppyConfig
 app = create_app()
 
 config = AppyConfig()
+
 app.config.update(config.toDict())
