@@ -8,9 +8,11 @@ services:
       dockerfile: Dockerfile
       args:
         - APP_PORT=${APP_PORT}
+        - APP_HOST=${APP_HOST}
     restart: unless-stopped
     stop_grace_period: 1s
     env_file:
       - ./.env.docker
     ports:
       - "${APP_PORT}:${APP_PORT}"
+    command: ["poetry", "run", "flask", "run", "--host=${APP_HOST}", "--port=${APP_PORT}"]

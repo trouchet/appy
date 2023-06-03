@@ -103,3 +103,7 @@ echo: ## echo current package version
 
 ecco: ## echo current package version
 	source $$(poetry env info --path)/bin/activate
+
+up: ## Start flask application 
+	@docker compose build
+	@docker compose up

@@ -17,12 +17,11 @@ COPY . /app
 WORKDIR /app/src
 
 # Install project dependencies
-RUN poetry config virtualenvs.create false \
-    && poetry install --no-interaction --no-ansi
+RUN poetry install --no-dev
 
-# Expose the Flask app port
+# Set the APP_PORT environment variable
 ARG APP_PORT
-ENV FLASK_RUN_PORT=${APP_PORT}
+ENV APP_PORT=${APP_PORT}
 
 # Set the APP_HOST environment variable
 ARG APP_HOST
