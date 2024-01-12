@@ -11,7 +11,7 @@ env_path = path.join(basedir, ".env")
 
 load_dotenv(env_path)
 
-AVAILABLE_ENVIRONMENTS = ["development", "production"]
+AVAILABLE_ENVIRONMENTS = [True, False]
 
 
 class ConfigException(Exception):
@@ -29,10 +29,10 @@ class AppyConfig:
     APP_PORT = environ.get("APP_PORT")
     APP_HOST = environ.get("APP_HOST") or "localhost"
     SECRET_KEY = environ.get("SECRET_KEY") or "12345"
-    FLASK_ENV = (
-        environ.get("FLASK_ENV").strip()
-        if isinstance(environ.get("FLASK_ENV"), str)
-        else "development"
+    FLASK_DEBUG = (
+        environ.get("FLASK_DEBUG").strip()
+        if isinstance(environ.get("FLASK_DEBUG"), str)
+        else True
     )
 
     DATABASE_ENGINE = environ.get("DATABASE_ENGINE")
@@ -53,8 +53,8 @@ class AppyConfig:
         port=DATABASE_PORT or "5432",
     )
 
-    env_flag = FLASK_ENV == "development"
-
+    env_flag = FLASK_DEBUG == 1 
+    
     DEBUG = env_flag
     TESTING = env_flag
 
@@ -67,7 +67,7 @@ class AppyConfig:
             "APP_PORT": self.APP_PORT,
             "APP_HOST": self.APP_HOST,
             "SECRET_KEY": self.SECRET_KEY,
-            "FLASK_ENV": self.FLASK_ENV,
+            "FLASK_DEBUG": self.FLASK_DEBUG,
             "DEBUG": self.DEBUG,
             "TESTING": self.TESTING,
         }
