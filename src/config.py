@@ -1,4 +1,5 @@
 """Flask configuration."""
+
 from __future__ import annotations
 
 from os import environ, path
@@ -53,8 +54,8 @@ class AppyConfig:
         port=DATABASE_PORT or "5432",
     )
 
-    env_flag = FLASK_DEBUG == 1 
-    
+    env_flag = FLASK_DEBUG == 1
+
     DEBUG = env_flag
     TESTING = env_flag
 
