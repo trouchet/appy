@@ -72,7 +72,7 @@ jobs:
       - name: 
         if: matrix.os == 'windows-latest'
         run: |
-          poetry run pytest tests/
+          poetry run pytest --cov=src tests/
           # Uncomment when achieve sufficient coverage threshold
           poetry run coverage report -m
 
