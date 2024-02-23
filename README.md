@@ -1,4 +1,5 @@
 # ![appy_title](https://github.com/trouchet/appy/blob/8c9923dc13b109b83d07a43d6810ebf7b150a2fb/images/appy_small.png)
+
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/4e255ae6f2b645fb8f1578a3cc0a2291)](https://www.codacy.com/gh/trouchet/appy/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=trouchet/appy&amp;utm_campaign=Badge_Grade)
 [![codecov](https://codecov.io/gh/trouchet/appy/branch/main/graph/badge.svg?token=TYW1IWVDWJ)](https://codecov.io/gh/trouchet/appy)
 
@@ -10,15 +11,15 @@ Run the commands below on `appy` root path:
 
 ## Prepare
   
-  - What: prepare environment for `Flask` and `poetry` usage:
+- What: prepare environment for `Flask` and `poetry` usage:
   
-  ```
+  ```bash
   make prepare
   ```
 
 ## Run
 
-  - What: run the application:
+- What: run the application:
 
   ```
   make start
@@ -26,7 +27,7 @@ Run the commands below on `appy` root path:
 
 ## Lint
 
-  - What: fix PEP8 lint issues:
+- What: fix PEP8 lint issues:
 
    ```
    make lint
@@ -34,7 +35,7 @@ Run the commands below on `appy` root path:
 
 ## Test
 
-  - What: run the test batch
+- What: run the test batch
 
   ```
   make test
@@ -42,7 +43,7 @@ Run the commands below on `appy` root path:
   
 ## Test watch
 
-  - What: watch the test batch
+- What: watch the test batch
 
   ```
   make watch
@@ -50,7 +51,7 @@ Run the commands below on `appy` root path:
 
 ## Coverage
 
-  - What: generate the test coverage
+- What: generate the test coverage
 
   ```
   make coverage
