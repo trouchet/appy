@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0
+    rev: v4.6.0
     hooks:
       - id: end-of-file-fixer
         exclude: ^.*\.egg-info/
@@ -17,7 +17,7 @@ repos:
       - id: check-docstring-first
 
   - repo: https://github.com/asottile/pyupgrade
-    rev: v3.15.1
+    rev: v3.15.2
     hooks:
       - id: pyupgrade
         args: [--py37-plus]
@@ -47,7 +47,7 @@ repos:
         args: [--lines-after-imports, "-1"]
 
   - repo: https://github.com/psf/black
-    rev: 24.2.0
+    rev: 24.4.2
     hooks:
       - id: black
 
@@ -57,6 +57,6 @@ repos:
       - id: flake8
 
   - repo: https://github.com/pre-commit/pre-commit
-    rev: v3.6.2
+    rev: v3.7.0
     hooks:
       - id: validate_manifest
